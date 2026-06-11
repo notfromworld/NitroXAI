@@ -2,6 +2,16 @@
 
 NitroXAI is an interpretable framework for residue-level S-nitrosylation (SNO) site prediction that integrates protein language models, lightweight sequence-based baselines, explainable artificial intelligence (XAI), and structure-aware visualization. The framework is designed to identify candidate S-nitrosylated cysteine residues directly from protein sequence while providing mechanistic insights into the sequence determinants associated with S-nitrosylation.
 
+## Publication Status
+
+NitroXAI is currently under publication. The software, model artifacts, and inference resources associated with the framework have been archived on Zenodo and are publicly accessible through the following record:
+
+**Zenodo DOI:** https://doi.org/10.5281/zenodo.20648584
+
+The archived release contains the software package and inference resources corresponding to NitroXAI v0.1.0.
+
+If you use NitroXAI in academic work, please cite the Zenodo software record until the associated manuscript becomes available.
+
 The NitroXAI ecosystem consists of two complementary models:
 
 * **NitroXAI** – a protein language model (PLM)-based framework that leverages contextual protein representations for SNO site prediction.
