@@ -15,7 +15,7 @@ If you use NitroXAI in academic work, please cite the Zenodo software record unt
 The NitroXAI ecosystem consists of two complementary models:
 
 * **NitroXAI** – a protein language model (PLM)-based framework that leverages contextual protein representations for SNO site prediction.
-* **SNOCLIM** – a lightweight CNN–BiLSTM ensemble based on handcrafted sequence-derived features, developed as an interpretable and computationally efficient companion model.
+* **SNOCLIM** – a lightweight ensemble based on handcrafted sequence-derived features, developed as an interpretable and computationally efficient companion model.
 
 Despite using approximately three orders of magnitude fewer parameters than PLM-based approaches, SNOCLIM achieves competitive predictive performance, highlighting the value of biologically informed feature engineering for residue-level post-translational modification prediction.
 
@@ -23,7 +23,7 @@ Key capabilities include:
 
 * Residue-level S-nitrosylation prediction
 * Protein language model inference
-* Lightweight CNN–BiLSTM baseline prediction
+* Lightweight baseline prediction
 * Integrated Gradients–based interpretability
 * Residue-level attribution analysis
 * UniProt accession support
