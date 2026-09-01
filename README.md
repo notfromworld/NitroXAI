@@ -6,7 +6,7 @@ NitroXAI is an interpretable framework for residue-level S-nitrosylation (SNO) s
 
 NitroXAI is currently under publication. The software, model artifacts, and inference resources associated with the framework have been archived on Zenodo and are publicly accessible through the following record:
 
-**Zenodo DOI:** https://doi.org/10.5281/zenodo.20648584
+**Zenodo:**https://zenodo.org/records/22238589
 
 The archived release contains the software package and inference resources corresponding to NitroXAI v0.1.0.
 
