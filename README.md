@@ -1,35 +1,63 @@
 # NitroXAI
 
-NitroXAI is an interpretable framework for residue-level S-nitrosylation (SNO) site prediction that integrates protein language models, lightweight sequence-based baselines, explainable artificial intelligence (XAI), and structure-aware visualization. The framework is designed to identify candidate S-nitrosylated cysteine residues directly from protein sequence while providing mechanistic insights into the sequence determinants associated with S-nitrosylation.
+NitroXAI is an interpretable framework for residue-level
+S-nitrosylation (SNO) site prediction. It provides two frozen ensemble
+predictors for identifying candidate S-nitrosylated cysteine residues
+from complete protein sequences:
 
-## Publication Status
+- **NitroXAI**: a hybrid model that integrates handcrafted biochemical
+  and positional descriptors with contextual ESM-2 protein
+  language-model representations through attention-based fusion.
+- **SNO-CLIM**: a lightweight CNN-BiLSTM baseline using handcrafted
+  biochemical and positional features.
 
-NitroXAI is currently under publication. The software, model artifacts, and inference resources associated with the framework have been archived on Zenodo and are publicly accessible through the following record:
+Both predictors provide residue-level SNO probabilities, all-cysteine
+scanning, FASTA and optional UniProt workflows, batch prediction, and
+Integrated Gradients-based interpretation.
 
-**Zenodo:**https://zenodo.org/records/22238589
+## Release and citation
 
-The archived release contains the software package and inference resources corresponding to NitroXAI v0.1.0.
+NitroXAI v0.1.1 is archived on Zenodo:
 
-If you use NitroXAI in academic work, please cite the Zenodo software record until the associated manuscript becomes available.
+**Zenodo:** [10.5281/zenodo.22238589](https://doi.org/10.5281/zenodo.22238589)
 
-The NitroXAI ecosystem consists of two complementary models:
+The release contains frozen inference software, model checkpoints,
+fold-specific preprocessing resources, ensemble rules, decision
+thresholds, and interpretability workflows. Inference does not retrain
+models, refit scalers, optimize thresholds, or fine-tune ESM-2.
 
-* **NitroXAI** – a protein language model (PLM)-based framework that leverages contextual protein representations for SNO site prediction.
-* **SNOCLIM** – a lightweight ensemble based on handcrafted sequence-derived features, developed as an interpretable and computationally efficient companion model.
+If you use NitroXAI in academic work, please cite the Zenodo software
+record until the associated manuscript becomes available.
 
-Despite using approximately three orders of magnitude fewer parameters than PLM-based approaches, SNOCLIM achieves competitive predictive performance, highlighting the value of biologically informed feature engineering for residue-level post-translational modification prediction.
+## Key capabilities
 
-Key capabilities include:
+- Residue-level S-nitrosylation site prediction
+- Complete-protein ESM-2 inference for NitroXAI
+- Lightweight handcrafted-feature inference with SNO-CLIM
+- Raw sequence, FASTA, optional UniProt, and batch workflows
+- Individual-cysteine prediction and all-cysteine scanning
+- Integrated Gradients-based residue-level attribution
+- CPU inference and optional CUDA inference
 
-* Residue-level S-nitrosylation prediction
-* Protein language model inference
-* Lightweight baseline prediction
-* Integrated Gradients–based interpretability
-* Residue-level attribution analysis
-* UniProt accession support
-* FASTA sequence support
-* PDB and mmCIF structure support
-* Structure-aware visualization through PyMOL
-* Batch prediction workflows
+## Important input rule
 
-NitroXAI is intended as a computational prioritization framework for hypothesis generation and biological discovery. Predictions should be interpreted as candidate sites requiring experimental validation.
+For NitroXAI, provide the **complete protein sequence**. The model first
+encodes the full sequence using frozen ESM-2 and then extracts
+cysteine-centred 61-residue contextual windows. Do not provide a
+pre-extracted 61-residue fragment as the input sequence.
+
+## Scope
+
+NitroXAI is intended for computational prioritization and hypothesis
+generation. Predictions represent candidate S-nitrosylation sites and
+require experimental validation.
+
+This release contains frozen inference assets and interpretability
+workflows. The complete training pipeline, processed datasets, and
+associated materials will be released separately upon publication.
+
+## License
+
+Copyright © 2026 Soumyadeep Ray and Ganesh Bagler. Distributed under
+the [MIT License](LICENSE). Third-party resources, including UniProt
+retrieval and ESM-2 weights, remain subject to their respective terms.
