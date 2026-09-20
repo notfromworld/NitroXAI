@@ -221,26 +221,6 @@ snoclim explain --uniprot P04637 --position 182 --output explanation.csv
 
 ---
 
-## Model Overview
-
-### NitroXAI
-
-NitroXAI combines:
-
-**Protein sequence → ESM-2 contextual representations → cysteine-centred context extraction → attention-based representation → handcrafted biochemical/positional features → feature fusion → SNO probability**
-
-The model is designed to combine learned protein-language representations with biologically motivated residue-level descriptors while retaining residue-level interpretability.
-
-### SNO-CLIM
-
-SNO-CLIM provides a computationally lighter baseline:
-
-**Cysteine-centred sequence context → handcrafted biochemical/positional features → CNN-BiLSTM → SNO probability**
-
-It does not require ESM-2 inference and can therefore be useful when computational resources are limited.
-
----
-
 ## Interpretability
 
 NitroXAI includes **Integrated Gradients (IG)** workflows for examining residue-level contributions to individual predictions.
