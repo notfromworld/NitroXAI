@@ -85,6 +85,142 @@ Providing the complete sequence ensures that ESM-2 generates each residue repres
 
 ---
 
+## Command-Line Usage
+
+Both predictors provide command-line interfaces for single-protein prediction, cysteine-specific prediction, batch processing, and model interpretation.
+
+### NitroXAI
+
+#### Check the installation
+
+```bash
+nitroxai --version
+nitroxai info
+```
+
+#### Predict from a UniProt accession
+
+```bash
+nitroxai predict --uniprot P04637
+```
+
+By default, the predictor scans the protein sequence and reports predictions for candidate cysteine residues.
+
+#### Predict from a FASTA file
+
+```bash
+nitroxai predict --fasta protein.fasta
+```
+
+#### Predict from a raw sequence
+
+```bash
+nitroxai predict --sequence "M..."
+```
+
+For NitroXAI, the supplied sequence should be the **complete protein sequence**, not a pre-extracted local window.
+
+#### Predict a specific cysteine
+
+Use the residue position to request prediction for an individual cysteine:
+
+```bash
+nitroxai predict --uniprot P04637 --position 182
+```
+
+or:
+
+```bash
+nitroxai predict --fasta protein.fasta --position 182
+```
+
+#### Batch prediction
+
+Predict SNO sites across multiple proteins from a multi-FASTA file:
+
+```bash
+nitroxai batch --fasta proteins.fasta --output predictions.csv
+```
+
+Alternatively, provide a file containing UniProt accessions:
+
+```bash
+nitroxai batch --accessions accessions.txt --output predictions.csv
+```
+
+#### Integrated Gradients interpretation
+
+Generate residue-level attribution scores for a specific prediction:
+
+```bash
+nitroxai explain --uniprot P04637 --position 182 --output explanation.csv
+```
+
+Attention information can also be included:
+
+```bash
+nitroxai explain --uniprot P04637 --position 182 --attention --output explanation.json
+```
+
+---
+
+### SNO-CLIM
+
+#### Check the installation
+
+```bash
+snoclim --version
+snoclim info
+```
+
+#### Predict from a UniProt accession
+
+```bash
+snoclim predict --uniprot P04637
+```
+
+#### Predict from a FASTA file
+
+```bash
+snoclim predict --fasta protein.fasta
+```
+
+#### Predict from a raw sequence
+
+```bash
+snoclim predict --sequence "MPEPTIDE..."
+```
+
+#### Predict a specific cysteine
+
+```bash
+snoclim predict --uniprot P04637 --position 182
+```
+
+#### Batch prediction
+
+From a multi-FASTA file:
+
+```bash
+snoclim batch --fasta proteins.fasta --output predictions.csv
+```
+
+From a list of UniProt accessions:
+
+```bash
+snoclim batch --accessions accessions.txt --output predictions.csv
+```
+
+#### Integrated Gradients interpretation
+
+Generate residue-level attribution scores for an individual prediction:
+
+```bash
+snoclim explain --uniprot P04637 --position 182 --output explanation.csv
+```
+
+---
+
 ## Model Overview
 
 ### NitroXAI
