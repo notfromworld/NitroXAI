@@ -16,13 +16,22 @@ scanning, FASTA and optional UniProt workflows, batch prediction, and
 Integrated Gradients-based interpretation.
 
 ## Installation
+
+To set up the environment and install the packages from the source code, follow these steps:
+
+### 1. Create and Activate the Conda Environment
+Create the Conda environment using the configuration file located in the `reproducibility/` folder, then activate it:
+
+```bash
+conda env create -f reproducibility/environment-nitroxai-cv.yml
+conda activate nitroxai-cv
 Install the locally built artifacts; these releases are not uploaded to PyPI.
 
 !pip install dist/nitroxai-0.1.1-py3-none-any.whl
 
 !pip install dist/snoclim-0.1.1-py3-none-any.whl
 
-Note: If you downloaded the project as a ZIP from GitHub, make sure you extract it and run these commands from inside the root directory of the extracted folder where the dist/ folder is located. 
+Note: If you downloaded the project as a ZIP from GitHub, make sure you extract it and run these commands from inside the root directory of the extracted folder where the dist/ folder is located. ```
 ## Release and citation
 
 NitroXAI v0.1.1 is archived on Zenodo:
