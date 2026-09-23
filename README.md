@@ -1,6 +1,6 @@
 # NitroXAI
 
-**NitroXAI** is an interpretable framework for residue-level **S-nitrosylation (SNO) site prediction**. It provides two frozen ensemble predictors for identifying candidate S-nitrosylated cysteine residues from complete protein sequences:
+**NitroXAI** is an interpretable framework for residue-level **Human S-nitrosylation (SNO) site prediction**. It provides two frozen ensemble predictors for identifying candidate S-nitrosylated cysteine residues from complete protein sequences:
 
 - **NitroXAI** — a hybrid model integrating handcrafted biochemical and positional descriptors with contextual **ESM-2 protein language model representations** through attention-based fusion.
 - **SNO-CLIM** — a lightweight **CNN-BiLSTM** baseline using handcrafted biochemical and positional features.
